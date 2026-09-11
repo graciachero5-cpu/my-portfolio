@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leila's Belated Party 🎉</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+body{margin:0;background:#fff0f6;font-family:Poppins;overflow-x:hidden;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.confetti{position:fixed;top:-10px;font-size:22px;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.card{width:92%;max-width:390px;background:white;border-radius:28px;box-shadow:0 25px 70px rgba(255,90,143,.3);overflow:hidden;text-align:center;z-index:2;position:relative}
+.top{height:200px;background:linear-gradient(135deg,#ffb5d8,#ff7aa2,#ff9a5c);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.top h1{font-family:Great Vibes;font-size:50px;color:white;margin:0}
+.float{font-size:28px;animation:bob 2s infinite alternate}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.content{padding:22px}
+.badge{background:#ffe0eb;color:#e9307f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:1px}
+.name{font-family:Great Vibes;font-size:48px;color:#ff5a8f;margin:8px 0}
+#cover{position:fixed;inset:0;background:#fff2f6;z-index:99;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer}
+.btn{display:block;background:#ff5a8f;color:white;padding:15px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:14px;box-shadow:0 10px 25px rgba(255,90,143,.4)}
+</style></head>
+<body>
+<div id="cover" onclick="openParty()">
+<div style="font-size:70px">💌🍕☁️</div>
+<p style="font-family:Great Vibes;font-size:36px;color:#ff5a8f">For Leila...</p>
+<p style="background:#ff5a8f;color:white;padding:14px 28px;border-radius:30px;font-weight:600;margin-top:10px">TAP TO OPEN THE PARTY 🎉</p>
+<p style="color:#999;font-size:12px;margin-top:10px">ps: turn up your volume 🎶</p>
+</div>
+
+<script>
+function openParty(){
+ document.getElementById('cover').style.display='none';
+ document.getElementById('music').play();
+ for(let i=0;i<40;i++){
+  let c=document.createElement('div');
+  c.className='confetti';
+  c.innerText=['🎊','🎉','🍕','☁️','💖','✨','🎂'][Math.floor(Math.random()*7)];
+  c.style.left=Math.random()*100+'vw';
+  c.style.animationDuration=(2+Math.random()*3)+'s';
+  c.style.animationDelay=Math.random()+'s';
+  document.body.appendChild(c);
+ }
+}
+</script>
+<audio id="music" loop src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3"></audio>
+
+<div class="card">
+<div class="top">
+<div><span class="float">🍕</span> <span class="float" style="animation-delay:.3s">☁️</span> <span class="float" style="animation-delay:.6s">🎂</span></div>
+<h1>Belated Birthday</h1>
+</div>
+<div class="content">
+<div
